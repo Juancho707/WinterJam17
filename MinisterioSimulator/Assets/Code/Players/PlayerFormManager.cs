@@ -19,6 +19,11 @@ public class PlayerFormManager : MonoBehaviour
         form = formObj.GetComponent<FormData>();
     }
 
+    public void AddAttachment(Attachment attObj)
+    {
+        form.AddAttachment(attObj);
+    }
+
     public void Interact()
     {
         if (Interactable != null)
