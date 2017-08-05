@@ -8,6 +8,7 @@ public class Oscillate : MonoBehaviour
     public float OscillatorFrequency;
     public Axis axis;
 
+    private bool isOscillating;
     private float angle;
 	
 	// Update is called once per frame
@@ -28,7 +29,26 @@ public class Oscillate : MonoBehaviour
 	            break;
 	    }
 
-	    this.transform.Translate(oscillation);
-	    this.angle += OscillatorFrequency;
+	    if (isOscillating)
+	    {
+	        this.transform.Translate(oscillation);
+	        this.angle += OscillatorFrequency;
+	    }
+	}
+
+    public void StopOscillating()
+    {
+        if (isOscillating)
+        {
+            isOscillating = false;
+        }
+    }
+
+    public void StartOscillating()
+    {
+        if (!isOscillating)
+        {
+            isOscillating = true;
+        }
     }
 }

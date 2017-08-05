@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour {
     private PlayerMetadata meta;
     private PlayerFormManager formmMngr;
 
+    public Oscillate[] Legs;
     public float Speed;
 
 	// Use this for initialization
@@ -39,11 +40,27 @@ public class PlayerControl : MonoBehaviour {
         if (horizValue != 0)
         {
             moveVector.x = horizValue * Speed;
+            foreach (var l in Legs)
+            {
+                l.StartOscillating();
+            }
         }
 
         if (vertValue != 0)
         {
             moveVector.z = vertValue * Speed;
+            foreach (var l in Legs)
+            {
+                l.StartOscillating();
+            }
+        }
+
+        if (vertValue == 0 & horizValue == 0)
+        {
+            foreach (var l in Legs)
+            {
+                l.StopOscillating();
+            }
         }
 
         agent.Move(moveVector);
