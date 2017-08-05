@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class DeskDetector : MonoBehaviour
 {
+    private PlayerMetadata myPlayer;
+    private PlayerFormManager myPlayerMgr;
+
+    private void Start()
+    {
+        myPlayer = this.GetComponent<PlayerMetadata>();
+        myPlayerMgr = this.GetComponent<PlayerFormManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Interactable"))
         {
-            //Display Desk Action
-            Debug.Log("ShowTooltip");
+            myPlayerMgr.Interactable = other.GetComponent<IInteractable>();
+            Debug.Log(string.Format("Player {0} entered zone of {1}",myPlayer.PlayerId, other.GetComponentInParent<FormDesk>().FormType));
         }
     }
 
@@ -17,8 +26,8 @@ public class DeskDetector : MonoBehaviour
     {
         if (other.tag.Equals("Interactable"))
         {
-            //Hide Desk Action
-            Debug.Log("HideTooltip");
+            myPlayerMgr.Interactable = null;
+            Debug.Log(string.Format("Player {0} exited zone of {1}", myPlayer.PlayerId, other.GetComponentInParent<FormDesk>().FormType));
         }
     }
 }
