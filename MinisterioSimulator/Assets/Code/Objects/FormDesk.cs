@@ -7,6 +7,11 @@ public class FormDesk : MonoBehaviour, IInteractable
 {
     public FormColor FormType;
 
+    public string DisplayName
+    {
+        get { return FormType.ToString(); }
+    }
+
     public void Interact(GameObject player)
     {
         var pManager = player.GetComponent<PlayerFormManager>();

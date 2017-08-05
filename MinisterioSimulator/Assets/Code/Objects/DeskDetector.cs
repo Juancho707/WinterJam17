@@ -18,7 +18,7 @@ public class DeskDetector : MonoBehaviour
         if (other.tag.Equals("Interactable"))
         {
             myPlayerMgr.Interactable = other.GetComponent<IInteractable>();
-            Debug.Log(string.Format("Player {0} entered zone of {1}",myPlayer.PlayerId, other.GetComponentInParent<FormDesk>().FormType));
+            Debug.Log(string.Format("Player {0} entered zone of {1}",myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
         }
     }
 
@@ -27,7 +27,7 @@ public class DeskDetector : MonoBehaviour
         if (other.tag.Equals("Interactable"))
         {
             myPlayerMgr.Interactable = null;
-            Debug.Log(string.Format("Player {0} exited zone of {1}", myPlayer.PlayerId, other.GetComponentInParent<FormDesk>().FormType));
+            Debug.Log(string.Format("Player {0} exited zone of {1}", myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
         }
     }
 }

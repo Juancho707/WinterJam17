@@ -7,11 +7,20 @@ public class Oscillate : MonoBehaviour
     public float OscillatorFactor;
     public float OscillatorFrequency;
     public Axis axis;
+    public bool AwakeOscillating;
 
     private bool isOscillating;
     private float angle;
-	
-	// Update is called once per frame
+
+    private void Start()
+    {
+        if (AwakeOscillating)
+        {
+            StartOscillating();
+        }
+    }
+
+    // Update is called once per frame
 	void Update ()
 	{
 	    var oscillation = Vector3.zero;
