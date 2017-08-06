@@ -8,6 +8,11 @@ public class PlayerFormManager : MonoBehaviour
     public IInteractable Interactable;
     public Vector3 FormOffset;
 
+    public FormData GetForm
+    {
+        get { return form; }
+    }
+
     private FormData form;
 
     public bool HasForm {
@@ -36,6 +41,14 @@ public class PlayerFormManager : MonoBehaviour
                 if (desk != null)
                 {
                     desk.Interact(this.gameObject);
+                }
+                else
+                {
+                    var desk1 = Interactable as DeliveryDesk;
+                    if (desk1 != null)
+                    {
+                        desk1.Interact(this.gameObject);
+                    }
                 }
             }
             else
@@ -69,5 +82,10 @@ public class PlayerFormManager : MonoBehaviour
             this.form.GetComponent<FormAutoDispose>().Drop();
             this.form = null;
         }
+    }
+
+    public void DestroyForm()
+    {
+        Destroy(form.gameObject);
     }
 }

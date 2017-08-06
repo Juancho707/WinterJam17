@@ -11,6 +11,8 @@ public class OrderUI : MonoBehaviour
     private Order myOrder;
     private OrderIngredients ingredients;
 
+    public Order OrderData {get { return myOrder; } }
+
     private void Start()
     {
         clock = this.GetComponentInChildren<OrderClock>();
@@ -20,5 +22,17 @@ public class OrderUI : MonoBehaviour
         myOrder = new Order();
         form.DisplayForm(myOrder);
         ingredients.DisplayIngredients(myOrder);
+
+        clock.StartCountdown(myOrder.TimeLimit);
+    }
+
+    public void FailOrder()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void CloseOrder()
+    {
+        Destroy(this.gameObject);
     }
 }

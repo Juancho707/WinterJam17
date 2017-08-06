@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4807017175823202}
   - component: {fileID: 195350361527592916}
   - component: {fileID: 54894853287870524}
-  - component: {fileID: 114081574245392842}
+  - component: {fileID: 114787562684505996}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Player
@@ -87,6 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4412122502893694}
+  - component: {fileID: 114089494092430886}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -218,7 +219,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1675987408645700}
-  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -226,7 +227,7 @@ Transform:
   - {fileID: 4400525186679342}
   m_Father: {fileID: 4807017175823202}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!4 &4706358792508900
 Transform:
   m_ObjectHideFlags: 1
@@ -247,7 +248,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1368059882050842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.32, y: 0.78, z: -3.0778122}
+  m_LocalPosition: {x: 9.1, y: 0.78, z: -30.159996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4412122502893694}
@@ -269,12 +270,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114081574245392842
+--- !u!114 &114089494092430886
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1368059882050842}
+  m_GameObject: {fileID: 1675987408645700}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f49cd1107652a3e43bc5ed935b5b30b8, type: 3}
@@ -297,6 +298,21 @@ MonoBehaviour:
   OscillatorFrequency: 0.5
   axis: 1
   AwakeOscillating: 0
+--- !u!114 &114787562684505996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1368059882050842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13ea07091a849428629da49d7957323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdleTimeMax: 7
+  IdleTimeMin: 3
+  StopDistance: 3
+  Legs: []
 --- !u!114 &114886172082437280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -336,7 +352,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
