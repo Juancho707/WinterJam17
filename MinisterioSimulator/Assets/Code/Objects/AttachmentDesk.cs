@@ -24,6 +24,17 @@ public class AttachmentDesk : MonoBehaviour, IInteractable
         if (pManager.HasForm)
         {
             pManager.AddAttachment(AttachmentType);
+            if (AttachmentType != Attachment.duplicateCopy)
+            {
+                GlobalReferences.audioPlayer.PlayRandomStamp();
+            }
+        }
+
+        var printerAnim = this.GetComponentInChildren<PrinterMachine>();
+        if (printerAnim != null)
+        {
+            printerAnim.PlayPrintAnimation();
+            this.GetComponent<AudioSource>().Play();
         }
     }
 }

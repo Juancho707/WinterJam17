@@ -42,13 +42,17 @@ public class PlayerFormManager : MonoBehaviour
                 {
                     desk.Interact(this.gameObject);
                 }
-                else
+
+                var desk1 = Interactable as DeliveryDesk;
+                if (desk1 != null)
                 {
-                    var desk1 = Interactable as DeliveryDesk;
-                    if (desk1 != null)
-                    {
-                        desk1.Interact(this.gameObject);
-                    }
+                    desk1.Interact(this.gameObject);
+                }
+
+                var shred = Interactable as ShreddingMachineDesk;
+                if (shred != null)
+                {
+                    shred.Interact(this.gameObject);
                 }
             }
             else

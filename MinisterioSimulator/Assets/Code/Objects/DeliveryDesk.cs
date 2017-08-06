@@ -44,6 +44,10 @@ public class DeliveryDesk : MonoBehaviour, IInteractable
                 this.GetComponent<AudioSource>().Play();
                 GlobalReferences.score.AddSuccess();
             }
+            else
+            {
+                GlobalReferences.audioPlayer.PlayError();
+            }
 
             index++;
         }
