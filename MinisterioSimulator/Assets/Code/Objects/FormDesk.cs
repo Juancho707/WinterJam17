@@ -12,6 +12,14 @@ public class FormDesk : MonoBehaviour, IInteractable
         get { return FormType.ToString(); }
     }
 
+    public string TooltipMsg
+    {
+        get
+        {
+            return string.Format("Take {0} form", FormType);
+        }
+    }
+
     public void Interact(GameObject player)
     {
         var pManager = player.GetComponent<PlayerFormManager>();

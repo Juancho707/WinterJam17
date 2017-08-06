@@ -15,6 +15,13 @@ public class FormAutoDispose : MonoBehaviour, IInteractable
         get { return "form"; }
     }
 
+    public string TooltipMsg
+    {
+        get
+        {
+            return "Pick up form";
+        }
+    }
     public void Drop()
     {
         isDropped = true;

@@ -12,6 +12,14 @@ public class AttachmentDesk : MonoBehaviour, IInteractable
         get { return AttachmentType.ToString(); }
     }
 
+    public string TooltipMsg
+    {
+        get
+        {
+            return string.Format("Attach {0}", AttachmentType);
+        }
+    }
+
     public void Interact(GameObject player)
     {
         var pManager = player.GetComponent<PlayerFormManager>();

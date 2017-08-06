@@ -7,4 +7,6 @@ public interface IInteractable
     void Interact(GameObject player);
 
     string DisplayName { get; }
+
+    string TooltipMsg { get; }
 }
