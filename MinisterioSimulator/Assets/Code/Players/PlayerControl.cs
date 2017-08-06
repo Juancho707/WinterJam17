@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour {
         {
             formmMngr.Interact();
         }
+
+        if (Input.GetButtonDown(string.Format("Drop_P{0}", meta.PlayerId)))
+        {
+            formmMngr.Drop();
+        }
     }
 
     void Move()

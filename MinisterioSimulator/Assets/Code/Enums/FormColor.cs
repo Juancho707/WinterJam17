@@ -2,6 +2,6 @@
 {
     white,
     pink,
-    yellow    
+    blue    
 }
 

@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114108959448433960}
   - component: {fileID: 208470445899504452}
   m_Layer: 0
-  m_Name: YellowFormDesk
+  m_Name: BlueFormDesk
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

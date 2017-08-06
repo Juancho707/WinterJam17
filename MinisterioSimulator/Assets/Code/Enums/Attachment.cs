@@ -2,6 +2,7 @@
 {
     redSeal,
     blueSeal,
-    greenSeal
+    greenSeal,
+    duplicateCopy
 }
 

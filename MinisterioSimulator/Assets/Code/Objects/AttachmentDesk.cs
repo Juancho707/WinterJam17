@@ -15,7 +15,7 @@ public class AttachmentDesk : MonoBehaviour, IInteractable
     public void Interact(GameObject player)
     {
         var pManager = player.GetComponent<PlayerFormManager>();
-        if (!pManager.HasForm)
+        if (pManager.HasForm)
         {
             pManager.AddAttachment(AttachmentType);
         }
