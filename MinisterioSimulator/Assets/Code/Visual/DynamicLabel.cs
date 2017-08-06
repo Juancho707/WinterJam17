@@ -7,7 +7,7 @@ public class DynamicLabel : MonoBehaviour
 {
     public string Format;
 
-    public void SetLevel(params object[] args)
+    public void SetLabel(params object[] args)
     {
         this.GetComponent<Text>().text = string.Format(Format, args);
     }

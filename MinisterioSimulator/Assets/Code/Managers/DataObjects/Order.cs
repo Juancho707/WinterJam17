@@ -12,7 +12,7 @@ public class Order
     public float TimeLimit;
 
     private const float timeFactor = 7f;
-    private const float baseTime = 10f;
+    private const float baseTime = 15f;
 
     public Order()
     {

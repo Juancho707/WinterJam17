@@ -42,6 +42,7 @@ public class DeliveryDesk : MonoBehaviour, IInteractable
             {
                 Destroy(orders[index].gameObject);
                 this.GetComponent<AudioSource>().Play();
+                GlobalReferences.score.AddSuccess();
             }
 
             index++;

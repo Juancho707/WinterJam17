@@ -28,11 +28,14 @@ public class OrderUI : MonoBehaviour
 
     public void FailOrder()
     {
+        GlobalReferences.score.AddStrike();
         Destroy(this.gameObject);
     }
 
     public void CloseOrder()
     {
+        GlobalReferences.score.AddSuccess();
         Destroy(this.gameObject);
+
     }
 }

@@ -10,7 +10,7 @@ public class Tooltip : MonoBehaviour
 
     public void UpdateDisplay(string msg, ControlButtons btn )
     {
-        TooltipLabel.SetLevel(msg);
+        TooltipLabel.SetLabel(msg);
     }
    
 }

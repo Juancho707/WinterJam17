@@ -21,9 +21,4 @@ public class OrderInflow : MonoBehaviour
             intervalElapsed = 0;
         }
     }
-
-    public void CloseOrder(OrderUI order)
-    {
-        
-    }
 }
