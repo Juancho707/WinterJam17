@@ -12,6 +12,8 @@ public class TooltipManager : MonoBehaviour
     private void Start()
     {
         interactable = GetComponentInParent<IInteractable>();
+        var originalXRot = tooltip.transform.eulerAngles.x;
+        tooltip.transform.eulerAngles = new Vector3(originalXRot, 0f, 0f);
     }
 
     public void Show()

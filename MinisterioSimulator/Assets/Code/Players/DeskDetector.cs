@@ -18,7 +18,8 @@ public class DeskDetector : MonoBehaviour
         if (other.tag.Equals("Interactable"))
         {
             myPlayerMgr.Interactable = other.GetComponentInParent<IInteractable>();
-            Debug.Log(string.Format("Player {0} entered zone of {1}",myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
+            other.GetComponentInParent<TooltipManager>().Show();
+            //Debug.Log(string.Format("Player {0} entered zone of {1}",myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
         }
     }
 
@@ -26,8 +27,9 @@ public class DeskDetector : MonoBehaviour
     {
         if (other.tag.Equals("Interactable"))
         {
+            other.GetComponentInParent<TooltipManager>().Hide();
             myPlayerMgr.Interactable = null;
-            Debug.Log(string.Format("Player {0} exited zone of {1}", myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
+            //Debug.Log(string.Format("Player {0} exited zone of {1}", myPlayer.PlayerId, other.GetComponentInParent<IInteractable>().DisplayName));
         }
     }
 }

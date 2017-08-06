@@ -7,6 +7,8 @@ using UnityEngine.VR.WSA.Persistence;
 public class FormAutoDispose : MonoBehaviour, IInteractable
 {
     public float MaxLifetime;
+    public string TooltipTxt;
+
     private float elapsedLife;
     private bool isDropped;
 
@@ -17,11 +19,9 @@ public class FormAutoDispose : MonoBehaviour, IInteractable
 
     public string TooltipMsg
     {
-        get
-        {
-            return "Pick up form";
-        }
+        get { return TooltipTxt; }
     }
+
     public void Drop()
     {
         isDropped = true;

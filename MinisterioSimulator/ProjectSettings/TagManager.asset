@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Spawner
+  - NavNode
   layers:
   - Default
   - TransparentFX
