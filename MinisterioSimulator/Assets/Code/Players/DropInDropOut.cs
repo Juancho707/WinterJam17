@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class DropInDropOut : MonoBehaviour
 {
@@ -55,6 +56,11 @@ public class DropInDropOut : MonoBehaviour
             {
                 Players[3].SetActive(true);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

@@ -13,8 +13,15 @@ public class NPCRandomizer : MonoBehaviour
     private void Start()
     {
         originalXRot = this.transform.eulerAngles.x;
-        Head.sprite= GlobalReferences.resources.GetComponent<NpcsResources>().GetRandomHead();
-        Body.sprite = GlobalReferences.resources.GetComponent<NpcsResources>().GetRandomBody();
+        if (Head != null)
+        {
+            Head.sprite = GlobalReferences.resources.GetComponent<NpcsResources>().GetRandomHead();
+        }
+
+        if (Body != null)
+        {
+            Body.sprite = GlobalReferences.resources.GetComponent<NpcsResources>().GetRandomBody();
+        }
     }
 
     private void Update()
